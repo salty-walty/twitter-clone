@@ -2,11 +2,10 @@
 
 <p>Here's what your "friends" are saying: </p>
 
+<% random_tweet %>
+
 <div>
 	<% @following_tweets.each do |tweet| %>
-		<div>
-			<p><%= tweet.user.username %></p>
-			<p><%= tweet.message.html_safe %></p>
-		</div>
+		<%= render 'layouts/tweet', tweet: tweet %>
 	<% end %>
 </div>
